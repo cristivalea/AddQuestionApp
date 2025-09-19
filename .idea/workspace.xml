@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c65b2b84-185b-4a56-9560-3dc939ff3218" name="Changes" comment="Primul commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/AbstractContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/AbstractResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/Configuration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUPCod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/Dificulty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/GuiType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/Objectiv.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/ResponseText.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/objectives.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c65b2b84-185b-4a56-9560-3dc939ff3218" name="Changes" comment="adauugare clase referitoare la o prtre din intrebare">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUpImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUpImageMidle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUpMidleCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/AbstractContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/AbstractContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUPCod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUPCod.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +53,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\LICENTA\AddQuestionApp\src\main\java\org\example" />
+      <recent name="D:\LICENTA\AddQuestionApp\src\main\java\org\example\core" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -68,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1758192621919</updated>
       <workItem from="1758192622945" duration="165000" />
-      <workItem from="1758275986783" duration="335000" />
+      <workItem from="1758275986783" duration="1531000" />
     </task>
     <task id="LOCAL-00001" summary="Primul commit">
       <option name="closed" value="true" />
@@ -78,7 +78,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758192709017</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="adauugare clase referitoare la o prtre din intrebare">
+      <option name="closed" value="true" />
+      <created>1758276355499</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1758276355499</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,7 +94,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primul commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Primul commit" />
+    <MESSAGE value="adauugare clase referitoare la o prtre din intrebare" />
+    <option name="LAST_COMMIT_MESSAGE" value="adauugare clase referitoare la o prtre din intrebare" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
