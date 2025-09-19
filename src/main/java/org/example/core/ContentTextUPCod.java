@@ -10,7 +10,7 @@ public class ContentTextUPCod extends AbstractContent{
 
     @Override
     public String toString() {
-        return textUP + "\n" + cod + "\n";
+        return text + "\n" + cod + "\n";
     }
 
     public String getCode() {

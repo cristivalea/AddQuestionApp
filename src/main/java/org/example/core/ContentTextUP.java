@@ -7,9 +7,7 @@ public class ContentTextUP extends AbstractContent{
 
     @Override
     public String toString() {
-        return textUP + "\n";
+        return text + "\n";
     }
-
-    public String getCode(){return null;}
 
 }

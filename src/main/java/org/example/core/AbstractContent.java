@@ -1,22 +1,20 @@
 package org.example.core;
 
 public abstract class AbstractContent {
-    protected String textUP;
+    protected String text;
 
     public AbstractContent(String textUP) {
-        this.textUP = textUP;
+        this.text = textUP;
     }
 
     @Override
     public String toString() {
         return "AbstractContent{" +
-                "textUP='" + textUP + '\'' +
+                "textUP='" + this.text + '\'' +
                 '}';
     }
 
-    public String getTextUP() {
-        return textUP;
+    public String getText() {
+        return this.text;
     }
-
-    public abstract String getCode();
 }
