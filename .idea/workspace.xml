@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c65b2b84-185b-4a56-9560-3dc939ff3218" name="Changes" comment="Finalizare aplicatie de adaugarae a intrebarii">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUpImageMidle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUpImageMidle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUpMidleCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUpMidleCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/ResponseCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/ResponseCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/write_file/ParseXMLQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/write_file/ParseXMLQuestion.java" afterDir="false" />
-    </list>
+    <list default="true" id="c65b2b84-185b-4a56-9560-3dc939ff3218" name="Changes" comment="Finalizare scriere xml si json" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1758192621919</updated>
       <workItem from="1758192622945" duration="165000" />
-      <workItem from="1758275986783" duration="31461000" />
+      <workItem from="1758275986783" duration="31776000" />
     </task>
     <task id="LOCAL-00001" summary="Primul commit">
       <option name="closed" value="true" />
@@ -172,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758555083245</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Finalizare scriere xml si json">
+      <option name="closed" value="true" />
+      <created>1758557832194</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1758557832194</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,7 +191,8 @@
     <MESSAGE value="Finalizare adaugare 3 tipuri de intrebari" />
     <MESSAGE value="Creare toate functionalitatile de intreoducere a intrebarilor" />
     <MESSAGE value="Finalizare aplicatie de adaugarae a intrebarii" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalizare aplicatie de adaugarae a intrebarii" />
+    <MESSAGE value="Finalizare scriere xml si json" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalizare scriere xml si json" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
