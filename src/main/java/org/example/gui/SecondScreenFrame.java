@@ -1,6 +1,5 @@
 package org.example.gui;
 
-import org.example.core.ContentTextUPCod;
 import org.example.core.GuiType;
 import org.example.core.Question;
 
@@ -73,6 +72,11 @@ public class SecondScreenFrame extends JFrame implements ActionListener {
             case 2:
             {
                 contentPanel = new ContentTextUpPanel();
+                break;
+            }
+            case 4:
+            {
+                contentPanel = new ContentTextUpImgPanel();
                 break;
             }
         }

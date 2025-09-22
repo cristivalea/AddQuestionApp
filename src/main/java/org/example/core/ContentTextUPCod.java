@@ -20,4 +20,6 @@ public class ContentTextUPCod extends AbstractContent{
     public void setCod(String cod) {
         this.cod = cod;
     }
+
+
 }

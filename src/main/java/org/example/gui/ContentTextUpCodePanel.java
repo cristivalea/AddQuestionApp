@@ -33,7 +33,6 @@ public class ContentTextUpCodePanel extends JPanel implements ActionListener {
         this.txtText = new JTextArea(5, 40);
         this.panelText.add(this.txtText);
 
-
         this.panelCode = new JPanel();
         this.labelCode = new JLabel("Code");
         this.textCode = new JTextArea(35, 50);

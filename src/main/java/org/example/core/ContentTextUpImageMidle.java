@@ -9,4 +9,12 @@ public class ContentTextUpImageMidle extends AbstractContent{
         this.imagePath = imagePath;
         this.textMidle = textMidle;
     }
+
+    @Override
+    public String toString() {
+        return "ContentTextUpImageMidle{" +
+                "imagePath='" + imagePath + '\'' +
+                ", textMidle='" + textMidle + '\'' +
+                '}';
+    }
 }

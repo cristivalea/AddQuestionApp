@@ -148,7 +148,7 @@ public class FirstScreenFrame extends JFrame implements ActionListener {
         this.add(this.mainPanel);
         this.setVisible(true);
         this.pack();
-        this.setSize(1300, 900);
+        this.setSize(1300, 800);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 

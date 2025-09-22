@@ -7,4 +7,20 @@ public class ContentTextUpImage extends AbstractContent{
         super(textUP);
         this.imagePath = imagePath;
     }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    @Override
+    public String toString() {
+        return "ContentTextUpImage{" +
+                "text " + text +
+                " imagePath='" + imagePath + '\'' +
+                '}';
+    }
 }

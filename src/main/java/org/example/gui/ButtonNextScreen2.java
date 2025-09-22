@@ -1,9 +1,6 @@
 package org.example.gui;
 
-import org.example.core.ContentTextUP;
-import org.example.core.ContentTextUPCod;
-import org.example.core.GuiType;
-import org.example.core.Question;
+import org.example.core.*;
 
 import javax.swing.*;
 
@@ -27,10 +24,19 @@ public class ButtonNextScreen2 extends JButton implements Command {
             question.setResponses(panel.getResponses());
             question.setAnswers(panel.getAnswers());
         }
-        if (contentPanel instanceof ContentTextUpCodePanel) {
+        else if (contentPanel instanceof ContentTextUpCodePanel panel) {
             String content = ((ContentTextUpCodePanel) contentPanel).getContent();
             String code = ((ContentTextUpCodePanel) contentPanel).getCode();
             question.setConteent(new ContentTextUPCod(content, code));
+            question.setResponses(panel.getResponses());
+            question.setAnswers(panel.getAnswers());
+        }
+        else if (contentPanel instanceof ContentTextUpImgPanel panel) {
+            String content = ((ContentTextUpImgPanel) contentPanel).getContent();
+            String img = ((ContentTextUpImgPanel) contentPanel).getSelectedImageFile();
+            question.setConteent(new ContentTextUpImage(content, img));
+            question.setResponses(panel.getResponses());
+            question.setAnswers(panel.getAnswers());
         }
 
         question.setGuiType(selectedGuiType);
