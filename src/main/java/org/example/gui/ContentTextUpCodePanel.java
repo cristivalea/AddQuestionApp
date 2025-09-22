@@ -1,6 +1,7 @@
 package org.example.gui;
 
 import org.example.core.AbstractResponse;
+import org.example.core.ResponseCode;
 import org.example.core.ResponseText;
 
 import javax.swing.*;
@@ -68,21 +69,45 @@ public class ContentTextUpCodePanel extends JPanel implements ActionListener {
         ((Command)actionEvent.getSource()).execute();
     }
 
-    public java.util.List<AbstractResponse> getResponses() {
+    public List<AbstractResponse> getResponses() {
         List<AbstractResponse> responses = new ArrayList<>();
         int id = 1;
 
         for (Component c : answersContainer.getComponents()) {
-            if (c instanceof JPanel) {
-                JPanel row = (JPanel) c;
+            if (c instanceof JPanel row) {
+                JTextField txtAnswer = null;
+                JTextArea txtCode = null;
+                boolean isCode = false;
+                JCheckBox chkCorrect = null;
+
+
                 for (Component sub : row.getComponents()) {
                     if (sub instanceof JTextField tf) {
-                        String text = tf.getText().trim();
-                        if (!text.isEmpty()) {
-                            responses.add(new ResponseText(id, text));
+                        txtAnswer = tf;
+                    } else if (sub instanceof JScrollPane sp) {
+
+                        Component view = sp.getViewport().getView();
+                        if (view instanceof JTextArea ta) {
+                            txtCode = ta;
+                            isCode = ta.isVisible();
+                        }
+                    } else if (sub instanceof JCheckBox cb) {
+                        chkCorrect = cb;
+                    } else if (sub instanceof JRadioButton rb) {
+                        if (rb.getText().equals("Code") && rb.isSelected()) {
+                            isCode = true;
                         }
                     }
                 }
+
+                if (txtAnswer != null && !txtAnswer.getText().trim().isEmpty()) {
+                    if (isCode && txtCode != null) {
+                        responses.add(new ResponseCode(id, txtAnswer.getText().trim(), txtCode.getText().trim()));
+                    } else {
+                        responses.add(new ResponseText(id, txtAnswer.getText().trim()));
+                    }
+                }
+
                 id++;
             }
         }
@@ -96,11 +121,10 @@ public class ContentTextUpCodePanel extends JPanel implements ActionListener {
         int idx = 0;
 
         for (Component c : answersContainer.getComponents()) {
-            if (c instanceof JPanel) {
-                JPanel row = (JPanel) c;
+            if (c instanceof JPanel row) {
                 for (Component sub : row.getComponents()) {
-                    if (sub instanceof JCheckBox) {
-                        answers[idx] = ((JCheckBox) sub).isSelected();
+                    if (sub instanceof JCheckBox cb) {
+                        answers[idx] = cb.isSelected();
                     }
                 }
                 idx++;

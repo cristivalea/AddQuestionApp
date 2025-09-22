@@ -7,4 +7,13 @@ public class ResponseCode extends AbstractResponse{
         super(idRaspuns, txt);
         this.code = code;
     }
+
+    @Override
+    public String toString() {
+        return "ResponseCode{" +
+                "code='" + code + '\'' +
+                ", idRaspuns=" + idRaspuns +
+                ", txt='" + txt + '\'' +
+                '}';
+    }
 }
