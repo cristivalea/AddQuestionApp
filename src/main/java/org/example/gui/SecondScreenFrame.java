@@ -1,6 +1,6 @@
 package org.example.gui;
 
-import org.example.core.ContentTextUP;
+import org.example.core.ContentTextUPCod;
 import org.example.core.GuiType;
 import org.example.core.Question;
 
@@ -15,8 +15,7 @@ public class SecondScreenFrame extends JFrame implements ActionListener {
     private Question question;
 
     private JPanel contentPanel;
-    private JButton nextButton;
-
+    private ButtonNextScreen2 nextButton;
     private GuiType selectedGuiType;
     public SecondScreenFrame(Question question){
         this.question = question;
@@ -38,15 +37,13 @@ public class SecondScreenFrame extends JFrame implements ActionListener {
                 showContentPanel(gui);
             });
         }
-
-        nextButton = new JButton("Next");
-        nextButton.addActionListener(e -> printQuestionInfo());
         this.mainPanel.add(this.panelType);
-        this.add(this.mainPanel);
 
-        nextButton = new JButton("Next");
-        nextButton.addActionListener(e -> printQuestionInfo());
+        this.nextButton = new ButtonNextScreen2(this, this.question);
+        this.nextButton.addActionListener(this);
         this.mainPanel.add(this.nextButton);
+
+        this.add(this.mainPanel);
 
         this.setVisible(true);
         this.pack();
@@ -67,25 +64,41 @@ public class SecondScreenFrame extends JFrame implements ActionListener {
             mainPanel.remove(contentPanel);
         }
 
-        contentPanel = new ContentTextUpPanel();
-
+        switch (gui.getId()) {
+            case 1:
+            {
+                contentPanel = new ContentTextUpCodePanel();
+                break;
+            }
+            case 2:
+            {
+                contentPanel = new ContentTextUpPanel();
+                break;
+            }
+        }
 
         mainPanel.add(contentPanel, mainPanel.getComponentCount() - 1);
+
         mainPanel.revalidate();
         mainPanel.repaint();
     }
 
-    private void printQuestionInfo() {
-        if (contentPanel instanceof ContentTextUpPanel) {
-            String content = ((ContentTextUpPanel) contentPanel).getContent();
-            question.setConteent(new ContentTextUP(content));
-        }
-        question.setGuiType(selectedGuiType);
-
-// afișăm în consolă
-        System.out.println("===== Question colectată =====");
-        System.out.println(question);
+//    private void printQuestionInfo() {
+//        if (contentPanel instanceof ContentTextUpCodePanel) {
+//            String content = ((ContentTextUpCodePanel) contentPanel).getContent();
+//            String code = ((ContentTextUpCodePanel) contentPanel).getCode();
+//            question.setConteent(new ContentTextUPCod(content, code));
+//        }
+//        question.setGuiType(selectedGuiType);
+//
+//        System.out.println("===== Question colectată =====");
+//        System.out.println(question);
+//    }
+//
+    public JPanel getContentPanel() {
+        return contentPanel;
     }
+
 
 }
 

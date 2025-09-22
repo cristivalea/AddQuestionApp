@@ -115,7 +115,7 @@ public class FirstScreenFrame extends JFrame implements ActionListener {
         this.panelMainObjectives.add(this.labelMainObjective);
         JScrollPane scrollMain = new JScrollPane(this.listMainObjectives);
         this.panelMainObjectives.add(scrollMain);
-        scrollMain.setPreferredSize(new java.awt.Dimension(600, 250)); // dimensiune mai mare
+        scrollMain.setPreferredSize(new java.awt.Dimension(600, 250));
         this.panelMainObjectives.add(this.labelMainObjective, BorderLayout.NORTH);
         this.panelMainObjectives.add(scrollMain, BorderLayout.CENTER);
         this.mainPanel.add(this.panelMainObjectives);

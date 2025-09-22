@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c65b2b84-185b-4a56-9560-3dc939ff3218" name="Changes" comment="Adaugare clase pentru raspunsuri">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ButtonGenerateQuestionId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ButtonNextScreen1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ContentTextUpPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/FirstScreenFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/SecondScreenFrame.java" afterDir="false" />
+    <list default="true" id="c65b2b84-185b-4a56-9560-3dc939ff3218" name="Changes" comment="Functionare partiala ecran 1 si 2">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ButtonAddAnswer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ButtonNextScreen2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ContentTextUpCodePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/GuiType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/GuiType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/ContentTextUpPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ContentTextUpPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/FirstScreenFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/FirstScreenFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/SecondScreenFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/SecondScreenFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1758192621919</updated>
       <workItem from="1758192622945" duration="165000" />
-      <workItem from="1758275986783" duration="15357000" />
+      <workItem from="1758275986783" duration="20469000" />
     </task>
     <task id="LOCAL-00001" summary="Primul commit">
       <option name="closed" value="true" />
@@ -128,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758279226841</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Functionare partiala ecran 1 si 2">
+      <option name="closed" value="true" />
+      <created>1758530380484</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1758530380485</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,7 +145,8 @@
     <MESSAGE value="adauugare clase referitoare la o prtre din intrebare" />
     <MESSAGE value="Adaugare clase pentru diferite tipuri de content" />
     <MESSAGE value="Adaugare clase pentru raspunsuri" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adaugare clase pentru raspunsuri" />
+    <MESSAGE value="Functionare partiala ecran 1 si 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Functionare partiala ecran 1 si 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
