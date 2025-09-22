@@ -255,68 +255,92 @@ public class ParseXMLQuestion {
         parent.appendChild(elem);
     }
 
-//    public void writeToXML(Question question){
-//        try{
-//
-//            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-//            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-//            Document doc = docBuilder.newDocument();
-//
-//            Element root = doc.createElement("question");
-//            doc.appendChild(root);
-//            createElementWithText(doc, root, "format", question.getGuiType().getDenumire());
-//            createElementWithText(doc, root, "type", question.getDificulty().getDenumire());
-//            createElementWithText(doc, root, "id", question.getIdQuestion());
-//            String idMain = "";
-//            for(Objectiv op : question.getMainObjectives()){
-//                idMain += op.getId();
-//            }
-//            createElementWithText(doc, root, "mainObjectiv", idMain);
-//            String idSec = "";
-//            for(Objectiv os : question.getSecondaryObjectiv()){
-//                idSec += os.getId();
-//            }
-//            createElementWithText(doc, root, "secondarObjectiv", idSec);
-//            createElementWithText(doc, root, "estimatedSeconds", String.valueOf(question.getTimeLength()));
-//            createElementWithText(doc, root, "textUP", question.getConteent().getText());
-//            createElementWithText(doc, root, "sourceCode", "\n\t\t" + question.getConteent() + "\n\t");
-//
-//            Element responses = doc.createElement("responses");
-//            root.appendChild(responses);
-//            for (AbstractResponse r : question.getResponses()) {
-//                createElementWithText(doc, responses, "response", r.getTxt());
-//            }
-//
-//            Element answers = doc.createElement("answers");
-//            root.appendChild(answers);
-//
-//            for (boolean a : question.getAnswers()) {
-//                String value = a ? "TRUE" : "FALSE";
-//                createElementWithText(doc, answers, "answer", value);
-//            }
-//
-//            createElementWithText(doc, root, "hint", question.getHint());
-//
-////            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-////            Transformer transformer = transformerFactory.newTransformer();
-////            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-////            DOMSource source = new DOMSource(doc);
-////            StreamResult consoleResult = new StreamResult(System.out);
-////            transformer.transform(source, consoleResult);
-//
+   public void writeToXML(Question question){
+        try{
+
+            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+            Document doc = docBuilder.newDocument();
+
+            Element root = doc.createElement("question");
+            doc.appendChild(root);
+            createElementWithText(doc, root, "format", question.getGuiType().getDenumire());
+            createElementWithText(doc, root, "type", question.getDificulty().getDenumire());
+            createElementWithText(doc, root, "id", question.getIdQuestion());
+            String idMain = "";
+            for(Objectiv op : question.getMainObjectives()){
+                idMain += op.getId();
+            }
+            createElementWithText(doc, root, "mainObjectiv", idMain);
+            String idSec = "";
+            for(Objectiv os : question.getSecondaryObjectiv()){
+                idSec += os.getId();
+            }
+            createElementWithText(doc, root, "secondarObjectiv", idSec);
+            createElementWithText(doc, root, "estimatedSeconds", String.valueOf(question.getTimeLength()));
+            AbstractContent content = question.getConteent();
+            if(content instanceof ContentTextUP) {
+                createElementWithText(doc, root, "textUP", content.getText());
+                createElementWithText(doc, root, "sourceCode", "\n\t\t" +  null + "\n\t");
+            }
+            else if(content instanceof ContentTextUPCod ctc){
+                createElementWithText(doc, root, "textUP", ctc.getText());
+                createElementWithText(doc, root, "sourceCode", "\n\t\t" +  ctc.getCode() + "\n\t");
+            }
+            else if(content instanceof ContentTextUpImage cti){
+                createElementWithText(doc, root, "textUP", cti.getText());
+                createElementWithText(doc, root, "sourceCode", "\n\t\t" +  cti.getImagePath() + "\n\t");
+            }
+            else if(content instanceof ContentTextUpImageMidle ctim){
+                createElementWithText(doc, root, "textUP", ctim.getText() + "\n" + ctim.getTextMidle());
+                createElementWithText(doc, root, "sourceCode", "\n\t\t" +  ctim.getImagePath() + "\n\t");
+            }
+            else if(content instanceof ContentTextUpMidleCode ctmc){
+                createElementWithText(doc, root, "textUP", ctmc.getText() + "\n" + ctmc.getTextMidle());
+                createElementWithText(doc, root, "sourceCode", "\n\t\t" +  ctmc.getCode() + "\n\t");
+            }
+
+            Element responses = doc.createElement("responses");
+            root.appendChild(responses);
+            for (AbstractResponse r : question.getResponses()) {
+                if(r instanceof ResponseText) {
+                    createElementWithText(doc, responses, "response", r.getTxt());
+                }
+                else if(r instanceof ResponseCode rc){
+                    createElementWithText(doc, responses, "response", rc.getTxt() + " " + rc.getCode());
+                }
+            }
+
+            Element answers = doc.createElement("answers");
+            root.appendChild(answers);
+
+            for (boolean a : question.getAnswers()) {
+                String value = a ? "TRUE" : "FALSE";
+                createElementWithText(doc, answers, "answer", value);
+            }
+
+            createElementWithText(doc, root, "hint", question.getHint());
+
 //            TransformerFactory transformerFactory = TransformerFactory.newInstance();
 //            Transformer transformer = transformerFactory.newTransformer();
 //            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 //            DOMSource source = new DOMSource(doc);
-//            String filePath = "D:\\LICENTA\\Intrebari_XML\\write_xml_java.xml";
-//            StreamResult result = new StreamResult(new File(filePath));
-//            transformer.transform(source, result);
-//
-//            System.out.println("XML creat cu succes la: " + filePath);
-//        }catch (Exception e){
-//            System.err.println("Error write question in xml: " + e.getMessage());
-//        }
-//    }
+//            StreamResult consoleResult = new StreamResult(System.out);
+//            transformer.transform(source, consoleResult);
+
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            DOMSource source = new DOMSource(doc);
+            String filePath = "D:\\LICENTA\\Intrebari_XML\\write_xml_java1.xml";
+            StreamResult result = new StreamResult(new File(filePath));
+            transformer.transform(source, result);
+
+            System.out.println("XML creat cu succes la: " + filePath);
+        }catch (Exception e){
+            System.err.println("Error write question in xml: " + e.getMessage());
+        }
+    }
 
     public static void main(String[] args){
         Question question = parseFromFile("D:\\LICENTA\\Intrebari_XML\\mediu\\question_1.xml");

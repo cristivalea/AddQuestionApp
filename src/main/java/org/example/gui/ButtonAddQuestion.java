@@ -2,6 +2,8 @@ package org.example.gui;
 
 import org.example.core.Dificulty;
 import org.example.core.Question;
+import org.example.write_file.ParseXMLQuestion;
+import org.example.write_file.WriteJSON;
 
 import javax.swing.*;
 
@@ -46,6 +48,10 @@ public class ButtonAddQuestion extends JButton implements Command {
         }
         question.setHint(textHint);
 
-        System.out.println(question);
+        ParseXMLQuestion parseXMLQuestion = new ParseXMLQuestion();
+        parseXMLQuestion.writeToXML(question);
+        Question question1 = parseXMLQuestion.parseFromFile("D:\\LICENTA\\Intrebari_XML\\write_xml_java1.xml");
+        WriteJSON writeJSON = new WriteJSON();
+        String json = writeJSON.writeJSON(question1);
     }
 }

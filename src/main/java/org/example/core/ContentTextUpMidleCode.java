@@ -18,4 +18,12 @@ public class ContentTextUpMidleCode extends AbstractContent{
                 ", textMidle='" + textMidle + '\'' +
                 '}';
     }
+
+    public String getCode() {
+        return code;
+    }
+
+    public String getTextMidle() {
+        return textMidle;
+    }
 }

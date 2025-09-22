@@ -16,4 +16,8 @@ public class ResponseCode extends AbstractResponse{
                 ", txt='" + txt + '\'' +
                 '}';
     }
+
+    public String getCode(){
+        return this.code;
+    }
 }

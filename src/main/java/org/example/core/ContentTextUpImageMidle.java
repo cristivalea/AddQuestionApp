@@ -17,4 +17,12 @@ public class ContentTextUpImageMidle extends AbstractContent{
                 ", textMidle='" + textMidle + '\'' +
                 '}';
     }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public String getTextMidle() {
+        return textMidle;
+    }
 }
