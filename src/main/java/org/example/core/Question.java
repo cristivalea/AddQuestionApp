@@ -29,6 +29,10 @@ public class Question {
         this.hint = hint;
     }
 
+    public Question() {
+
+    }
+
 
     public  String getIdQuestion() {
         return this.idQuestion;
