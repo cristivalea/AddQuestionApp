@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c65b2b84-185b-4a56-9560-3dc939ff3218" name="Changes" comment="Finalizare adaugare doua tipuri de intrebari">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ContentTextUpImgPanel.java" afterDir="false" />
+    <list default="true" id="c65b2b84-185b-4a56-9560-3dc939ff3218" name="Changes" comment="Finalizare adaugare 3 tipuri de intrebari">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ContentTextUpCodetextDownPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ContentTextUpimgTextDownPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUPCod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUPCod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUpImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUpImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUpImageMidle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUpImageMidle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/ButtonNextScreen2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ButtonNextScreen2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/ContentTextUpCodePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ContentTextUpCodePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/FirstScreenFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/FirstScreenFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/SecondScreenFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/SecondScreenFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/ThirdScreenFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ThirdScreenFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1758192621919</updated>
       <workItem from="1758192622945" duration="165000" />
-      <workItem from="1758275986783" duration="25420000" />
+      <workItem from="1758275986783" duration="27600000" />
     </task>
     <task id="LOCAL-00001" summary="Primul commit">
       <option name="closed" value="true" />
@@ -152,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758542525028</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Finalizare adaugare 3 tipuri de intrebari">
+      <option name="closed" value="true" />
+      <created>1758546066195</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1758546066196</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,7 +173,8 @@
     <MESSAGE value="Functionare partiala ecran 1 si 2" />
     <MESSAGE value="Adaugare functionalitate de preluare a raspunsurilor" />
     <MESSAGE value="Finalizare adaugare doua tipuri de intrebari" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalizare adaugare doua tipuri de intrebari" />
+    <MESSAGE value="Finalizare adaugare 3 tipuri de intrebari" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalizare adaugare 3 tipuri de intrebari" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

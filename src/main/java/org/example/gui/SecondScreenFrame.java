@@ -74,9 +74,19 @@ public class SecondScreenFrame extends JFrame implements ActionListener {
                 contentPanel = new ContentTextUpPanel();
                 break;
             }
+            case 3:
+            {
+                contentPanel = new ContentTextUpCodetextDownPanel();
+                break;
+            }
             case 4:
             {
                 contentPanel = new ContentTextUpImgPanel();
+                break;
+            }
+            case 5:
+            {
+                contentPanel = new ContentTextUpimgTextDownPanel();
                 break;
             }
         }

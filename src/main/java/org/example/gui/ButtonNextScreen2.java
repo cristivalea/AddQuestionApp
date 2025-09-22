@@ -38,6 +38,22 @@ public class ButtonNextScreen2 extends JButton implements Command {
             question.setResponses(panel.getResponses());
             question.setAnswers(panel.getAnswers());
         }
+        else if(contentPanel instanceof ContentTextUpimgTextDownPanel panel){
+            String content = ((ContentTextUpimgTextDownPanel) contentPanel).getContent();
+            String img = ((ContentTextUpimgTextDownPanel) contentPanel).getSelectedImageFile();
+            String textDown = ((ContentTextUpimgTextDownPanel) contentPanel).getTextDown();
+            question.setConteent(new ContentTextUpImageMidle(content, img, textDown));
+            question.setResponses(panel.getResponses());
+            question.setAnswers(panel.getAnswers());
+        }
+        else if(contentPanel instanceof ContentTextUpCodetextDownPanel panel){
+            String content = ((ContentTextUpCodetextDownPanel) contentPanel).getContent();
+            String code = ((ContentTextUpCodetextDownPanel) contentPanel).getCode();
+            String textDown = ((ContentTextUpCodetextDownPanel) contentPanel).getTextDown();
+            question.setConteent(new ContentTextUpMidleCode(content, code, textDown));
+            question.setResponses(panel.getResponses());
+            question.setAnswers(panel.getAnswers());
+        }
 
         question.setGuiType(selectedGuiType);
 

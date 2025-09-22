@@ -9,4 +9,13 @@ public class ContentTextUpMidleCode extends AbstractContent{
         this.code = code;
         this.textMidle = textMidle;
     }
+
+    @Override
+    public String toString() {
+        return "ContentTextUpMidleCode{" +
+                "text= " + text +
+                "code='" + code + '\'' +
+                ", textMidle='" + textMidle + '\'' +
+                '}';
+    }
 }

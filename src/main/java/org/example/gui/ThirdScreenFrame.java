@@ -55,7 +55,7 @@ public class ThirdScreenFrame extends JFrame implements ActionListener {
         this.add(this.mainPanel);
         this.setVisible(true);
         this.pack();
-        this.setSize(1500, 700);
+        this.setSize(1500, 800);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }

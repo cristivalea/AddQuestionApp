@@ -126,7 +126,7 @@ public class FirstScreenFrame extends JFrame implements ActionListener {
         this.panelSecondaryObjectives.add(this.labelSecondaryObjective);
         JScrollPane scrollSecondary = new JScrollPane(this.listSecondaryObjective);
         this.panelSecondaryObjectives.add(scrollSecondary);
-        scrollSecondary.setPreferredSize(new java.awt.Dimension(900, 250));
+        scrollSecondary.setPreferredSize(new java.awt.Dimension(900, 200));
         this.panelSecondaryObjectives.add(scrollSecondary, BorderLayout.CENTER);
         this.mainPanel.add(this.panelSecondaryObjectives);
 
