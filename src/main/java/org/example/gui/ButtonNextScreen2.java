@@ -35,7 +35,7 @@ public class ButtonNextScreen2 extends JButton implements Command {
 
         question.setGuiType(selectedGuiType);
 
-        System.out.println("===== Question colectată =====");
-        System.out.println(question);
+        new ThirdScreenFrame(question);
+        frame.dispose();
     }
 }

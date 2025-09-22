@@ -47,7 +47,7 @@ public class SecondScreenFrame extends JFrame implements ActionListener {
 
         this.setVisible(true);
         this.pack();
-        this.setSize(1300, 700);
+        this.setSize(1300, 800);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
