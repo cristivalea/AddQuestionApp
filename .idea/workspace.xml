@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c65b2b84-185b-4a56-9560-3dc939ff3218" name="Changes" comment="Finalizare scriere xml si json">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c65b2b84-185b-4a56-9560-3dc939ff3218" name="Changes" comment="Finalizare scriere xml si json" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +39,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/LICENTA/AddQuestionApp/src/main/java/org/example",
+    "last_opened_file_path": "D:/LICENTA/AddQuestionApp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,6 +69,7 @@
       <updated>1758192621919</updated>
       <workItem from="1758192622945" duration="165000" />
       <workItem from="1758275986783" duration="35408000" />
+      <workItem from="1758625463796" duration="16000" />
     </task>
     <task id="LOCAL-00001" summary="Primul commit">
       <option name="closed" value="true" />
@@ -184,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758557915287</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Finalizare scriere xml si json">
+      <option name="closed" value="true" />
+      <created>1758625469084</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1758625469084</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
