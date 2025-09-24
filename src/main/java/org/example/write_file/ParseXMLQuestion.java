@@ -298,6 +298,9 @@ public class ParseXMLQuestion {
             else if(content instanceof ContentTextUpMidleCode ctmc){
                 createElementWithText(doc, root, "textUP", ctmc.getText() + "\n" + ctmc.getTextMidle());
                 createElementWithText(doc, root, "sourceCode", "\n\t\t" +  ctmc.getCode() + "\n\t");
+            } else if(content instanceof ContentTextUpCodeImgTextDown ctci){
+                createElementWithText(doc, root, "textUP", ctci.getText() + "\n" + ctci.getTextDown());
+                createElementWithText(doc, root, "sourceCode", "\n\t\t" +  ctci.getCode() + "\n\t" + "(" + ctci.getImgPath() + ")");
             }
 
             Element responses = doc.createElement("responses");

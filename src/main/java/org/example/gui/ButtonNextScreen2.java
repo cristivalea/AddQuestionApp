@@ -53,6 +53,14 @@ public class ButtonNextScreen2 extends JButton implements Command {
             question.setConteent(new ContentTextUpMidleCode(content, code, textDown));
             question.setResponses(panel.getResponses());
             question.setAnswers(panel.getAnswers());
+        } else if(contentPanel instanceof ContentTextUpCodeImgTextDownPanel panel){
+            String content = ((ContentTextUpCodeImgTextDownPanel) contentPanel).getContent();
+            String code  = ((ContentTextUpCodeImgTextDownPanel) contentPanel).getTextCode();
+            String imgPath = ((ContentTextUpCodeImgTextDownPanel) contentPanel).getImgPath();
+            String textDown = ((ContentTextUpCodeImgTextDownPanel) contentPanel).getTextDown();
+            question.setConteent(new ContentTextUpCodeImgTextDown(content, code, imgPath, textDown));
+            question.setResponses(panel.getResponses());
+            question.setAnswers(panel.getAnswers());
         }
 
         question.setGuiType(selectedGuiType);
