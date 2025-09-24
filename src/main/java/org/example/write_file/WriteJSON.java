@@ -101,6 +101,7 @@ public class WriteJSON {
             data.put("answers", answers);
 
             data.put("hint", question.getHint());
+            data.put("partialScore", question.getPartialScore());
             String jsonString = mapper.writeValueAsString(data);
 
 //            System.out.println(jsonString);
