@@ -2,10 +2,8 @@ package org.example.write_file;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import org.example.core.AbstractContent;
-import org.example.core.AbstractResponse;
-import org.example.core.Objectiv;
-import org.example.core.Question;
+import org.example.core.*;
+import org.example.gui.ContentTextUpCodeImgTextDownPanel;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -50,12 +48,37 @@ public class WriteJSON {
 
             data.put("estimateSeconds", question.getTimeLength());
 
-            Map<String, AbstractContent> contentMap = new LinkedHashMap<>();
-            if(question.getConteent() != null){
+            Map<String, Object> dataContent = new LinkedHashMap<>();
+            AbstractContent content = question.getConteent();
 
-                contentMap.put("text", question.getConteent());
+            if (content != null) {
+                Map<String, Object> contentMap = new LinkedHashMap<>();
+                if(content instanceof ContentTextUpCodeImgTextDown ctcit){
+                    contentMap.put("textUP", ctcit.getText());
+                    contentMap.put("sourceCode", ctcit.getCode());
+                    contentMap.put("img", ctcit.getImgPath());
+                    contentMap.put("textDown", ctcit.getTextDown());
+                } else if(content instanceof ContentTextUpImageMidle ctid){
+                    contentMap.put("textUP", ctid.getText());
+                    contentMap.put("img", ctid.getImagePath());
+                    contentMap.put("textDown", ctid.getTextMidle());
+                } else if(content instanceof ContentTextUpMidleCode ctcd){
+                    contentMap.put("textUP", ctcd.getText());
+                    contentMap.put("sourceCode", ctcd.getCode());
+                    contentMap.put("textDown", ctcd.getTextMidle());
+                } else if(content instanceof ContentTextUPCod ctc){
+                    contentMap.put("textUP", ctc.getText());
+                    contentMap.put("sourceCode", ctc.getCode());
+                } else if(content instanceof ContentTextUpImage cti){
+                    contentMap.put("textUP", cti.getText());
+                    contentMap.put("img", cti.getImagePath());
+                } else if(content instanceof ContentTextUP){
+                    contentMap.put("textUP", content.getText());
+                }
+                data.put("content", contentMap);
             }
-            data.put("Content", contentMap);
+
+
 
             List<Map<String, String>> responses = new ArrayList<>();
             if(question.getResponses() != null) {
@@ -90,7 +113,7 @@ public class WriteJSON {
 
     public static void main(String[] args){
         ParseXMLQuestion parseXMLQuestion = new ParseXMLQuestion();
-        Question question1 = parseXMLQuestion.parseFromFile("D:\\LICENTA\\Intrebari_XML\\write_xml_java.xml");
+        Question question1 = parseXMLQuestion.parseFromFile("D:\\LICENTA\\Intrebari_XML\\write_xml_java1.xml");
         WriteJSON writeJSON = new WriteJSON();
         String string = writeJSON.writeJSON(question1);
         System.out.println(string);

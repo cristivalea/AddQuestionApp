@@ -34,6 +34,7 @@ public class ParseXMLQuestion {
         List<AbstractResponse> list_abs_resp = new ArrayList<>();
         boolean[] ans_axu = null;
         String hint = null;
+        String partialScore = null;
 
         Question question = new Question(id, dif, obj_pricipal, obj_secundare, durata ,gui, content_cod, list_abs_resp, ans_axu, hint);
 
@@ -42,14 +43,27 @@ public class ParseXMLQuestion {
         if(format == null){
             System.out.println("Nu exista valoare");
         }
-        if(format.equalsIgnoreCase("text_up_cod_raspunsuri")) {
+        if(format.equalsIgnoreCase("TEXT_UP_COD_RESPONSES")) {
             gui = GuiType.TEXT_UP_COD;
             question.setGuiType(GuiType.TEXT_UP_COD);
         }
-        else if(format.equalsIgnoreCase("text_up_raspunsuri")){
+        else if(format.equalsIgnoreCase("TEXT_UP_RESPONSES")){
             gui = GuiType.TEXT_UP;
             question.setGuiType(GuiType.TEXT_UP);
+        } else if(format.equalsIgnoreCase("TEXT_UP_COD_TEXT_DOWN_RESPONSES")){
+            gui = GuiType.TEXT_UP_COD_TEXT_DOWN;
+            question.setGuiType(GuiType.TEXT_UP_COD_TEXT_DOWN);
+        } else if(format.equalsIgnoreCase("TEXT_UP_IMAGE_RESPONSES")){
+            gui = GuiType.TEXT_UP_IMG_RASPUNSURI;
+            question.setGuiType(GuiType.TEXT_UP_IMG_RASPUNSURI);
+        } else if(format.equalsIgnoreCase("TEXT_UP_IMAGE_TEXT_DOWN_RESPONSES")){
+            gui = GuiType.TEXT_UP_IMG_TEXT_DOWN_RASPUNSURI;
+            question.setGuiType(GuiType.TEXT_UP_IMG_TEXT_DOWN_RASPUNSURI);
+        } else if(format.equalsIgnoreCase("TEXT UP CODE IMAGE TEXT DOWN RESPONSES")){
+            gui = GuiType.TEXT_UP_CODE_IMG_TEXT_DOWN_RESPONSES;
+            question.setGuiType(GuiType.TEXT_UP_IMG_TEXT_DOWN_RASPUNSURI);
         }
+
 
         //extragere tip
         String tip = e.getElementsByTagName("type").item(0).getTextContent().trim();
@@ -134,34 +148,77 @@ public class ParseXMLQuestion {
         question.setTimeLength(durata);
 
         //extragere cerinta
-        String cerinta = e.getElementsByTagName("textUP").item(0).getTextContent().trim();
-        if(cerinta == null){
-            System.out.println("Nu exista aceasta cerinta");
-        }
+//        String cerinta = e.getElementsByTagName("textUP").item(0).getTextContent().trim();
+//        if(cerinta == null){
+//            System.out.println("Nu exista aceasta cerinta");
+//        }
         //System.out.println(cerinta);
 
         //extragere cod
-        Element source_cod_el = null;
-        NodeList sourceCode = e.getElementsByTagName("sourceCode");
-        if(sourceCode.getLength() > 0){
-            source_cod_el = (Element) sourceCode.item(0);
-        }
-        String source_cod_string = null;
-        if(source_cod_el != null){
-            source_cod_string = source_cod_el.getTextContent().trim();
-        }
-        else {
-            source_cod_string = null;
-        }
-        if(source_cod_string != null && !source_cod_string.isEmpty()){
-            content_cod = new ContentTextUPCod(cerinta, source_cod_string);
-        }
-        else {
-            content_cod = new ContentTextUP(cerinta);
-        }
-        question.setConteent(content_cod);
+//        Element source_cod_el = null;
+//        NodeList sourceCode = e.getElementsByTagName("sourceCode");
+//        if(sourceCode.getLength() > 0){
+//            source_cod_el = (Element) sourceCode.item(0);
+//        }
+//        String source_cod_string = null;
+//        if(source_cod_el != null){
+//            source_cod_string = source_cod_el.getTextContent().trim();
+//        }
+//        else {
+//            source_cod_string = null;
+//        }
+//        if(source_cod_string != null && !source_cod_string.isEmpty()){
+//            content_cod = new ContentTextUPCod(cerinta, source_cod_string);
+//        }
+//        else {
+//            content_cod = new ContentTextUP(cerinta);
+//        }
+//        question.setConteent(content_cod);
 
-        //extragere raspunsuri
+        AbstractContent content = null;
+        String textUP = e.getElementsByTagName("textUP").item(0).getTextContent().trim();
+
+        String sourceCode = e.getElementsByTagName("sourceCode").item(0).getTextContent().trim();
+        if (sourceCode.equalsIgnoreCase("null")) sourceCode = null;
+
+        String textMiddle = e.getElementsByTagName("textMiddle").item(0).getTextContent().trim();
+        if (textMiddle.isEmpty()) textMiddle = null;
+
+        String textDown = e.getElementsByTagName("textDown").item(0).getTextContent().trim();
+        if (textDown.isEmpty()) textDown = null;
+
+        String imagePath = e.getElementsByTagName("img").item(0).getTextContent().trim();
+        if (imagePath.isEmpty()) imagePath = null;
+
+//        if(textUP != null){
+//            content = new ContentTextUP(textUP);
+//        } else if(textUP != null && sourceCode != null){
+//            content = new ContentTextUPCod(textUP, sourceCode);
+//        }else if(textUP != null && sourceCode != null && textDown != null){
+//            content = new ContentTextUpMidleCode(textUP, sourceCode, textDown);
+//        }else if(textUP != null && imagePath != null){
+//            content = new ContentTextUpImage(textUP, imagePath);
+//        } else if(textUP != null && imagePath != null && textDown != null){
+//            content = new ContentTextUpImageMidle(textUP, imagePath, textDown);
+//        } else if(textUP != null && sourceCode != null && imagePath != null && textDown != null){
+//            content = new ContentTextUpCodeImgTextDown(textUP, sourceCode, imagePath, textDown);
+//        }
+
+        if (textUP != null && sourceCode != null && imagePath != null && textDown != null) {
+            content = new ContentTextUpCodeImgTextDown(textUP, sourceCode, imagePath, textDown);
+        } else if (textUP != null && sourceCode != null && textDown != null) {
+            content = new ContentTextUpMidleCode(textUP, sourceCode, textDown);
+        } else if (textUP != null && imagePath != null && textDown != null) {
+            content = new ContentTextUpImageMidle(textUP, imagePath, textDown);
+        } else if (textUP != null && sourceCode != null) {
+            content = new ContentTextUPCod(textUP, sourceCode);
+        } else if (textUP != null && imagePath != null) {
+            content = new ContentTextUpImage(textUP, imagePath);
+        } else if (textUP != null) {
+            content = new ContentTextUP(textUP);
+        }
+        question.setConteent(content);
+
         NodeList nl2 = e.getElementsByTagName("responses");
         Node n2 = nl2.item(0);
         //System.out.println(n2.getNodeName());
@@ -226,6 +283,18 @@ public class ParseXMLQuestion {
         }
         question.setHint(hint);
 
+        //extrage partial score
+        partialScore = e.getElementsByTagName("partialScore").item(0).getTextContent().trim();
+        if(partialScore == null){
+            System.out.println("Nu ecista partial Score");
+        }
+        boolean score = false;
+        if(partialScore.equals("true")){
+            score = true;
+        } else if(partialScore.equals("false")){
+            score = false;
+        }
+        question.setPartialScore(score);
 
         return question;
     } // end readQuestion
@@ -282,25 +351,43 @@ public class ParseXMLQuestion {
             if(content instanceof ContentTextUP) {
                 createElementWithText(doc, root, "textUP", content.getText());
                 createElementWithText(doc, root, "sourceCode", "\n\t\t" +  null + "\n\t");
+                createElementWithText(doc, root, "textMiddle", null);
+                createElementWithText(doc, root, "img", null);
+                createElementWithText(doc, root, "textDown", null);
             }
             else if(content instanceof ContentTextUPCod ctc){
                 createElementWithText(doc, root, "textUP", ctc.getText());
                 createElementWithText(doc, root, "sourceCode", "\n\t\t" +  ctc.getCode() + "\n\t");
+                createElementWithText(doc, root, "textMiddle", null);
+                createElementWithText(doc, root, "img", null);
+                createElementWithText(doc, root, "textDown", null);
             }
             else if(content instanceof ContentTextUpImage cti){
                 createElementWithText(doc, root, "textUP", cti.getText());
-                createElementWithText(doc, root, "sourceCode", "\n\t\t" +  cti.getImagePath() + "\n\t");
+                createElementWithText(doc, root, "sourceCode", "\n\t\t" +  null + "\n\t");
+                createElementWithText(doc, root, "textMiddle", null);
+                createElementWithText(doc, root, "img", cti.getImagePath());
+                createElementWithText(doc, root, "textDown", null);
             }
             else if(content instanceof ContentTextUpImageMidle ctim){
-                createElementWithText(doc, root, "textUP", ctim.getText() + "\n" + ctim.getTextMidle());
-                createElementWithText(doc, root, "sourceCode", "\n\t\t" +  ctim.getImagePath() + "\n\t");
+                createElementWithText(doc, root, "textUP", ctim.getText());
+                createElementWithText(doc, root, "sourceCode", "\n\t\t" +  null + "\n\t");
+                createElementWithText(doc, root, "textMiddle", null);
+                createElementWithText(doc, root, "img", ctim.getImagePath());
+                createElementWithText(doc, root, "textDown", ctim.getTextMidle());
             }
             else if(content instanceof ContentTextUpMidleCode ctmc){
-                createElementWithText(doc, root, "textUP", ctmc.getText() + "\n" + ctmc.getTextMidle());
+                createElementWithText(doc, root, "textUP", ctmc.getText());
                 createElementWithText(doc, root, "sourceCode", "\n\t\t" +  ctmc.getCode() + "\n\t");
+                createElementWithText(doc, root, "textMiddle", null);
+                createElementWithText(doc, root, "img", null);
+                createElementWithText(doc, root, "textDown", ctmc.getTextMidle());
             } else if(content instanceof ContentTextUpCodeImgTextDown ctci){
-                createElementWithText(doc, root, "textUP", ctci.getText() + "\n" + ctci.getTextDown());
-                createElementWithText(doc, root, "sourceCode", "\n\t\t" +  ctci.getCode() + "\n\t" + "(" + ctci.getImgPath() + ")");
+                createElementWithText(doc, root, "textUP", ctci.getText());
+                createElementWithText(doc, root, "sourceCode", "\n\t\t" +  ctci.getCode() + "\n\t");
+                createElementWithText(doc, root, "textMiddle", null);
+                createElementWithText(doc, root, "img", ctci.getImgPath());
+                createElementWithText(doc, root, "textDown", ctci.getTextDown());
             }
 
             Element responses = doc.createElement("responses");
@@ -323,6 +410,14 @@ public class ParseXMLQuestion {
             }
 
             createElementWithText(doc, root, "hint", question.getHint());
+            boolean score = question.getPartialScore();
+            String partialScore = "";
+            if(score == true){
+                partialScore = "true";
+            } else if(score == false){
+                partialScore = "false";
+            }
+            createElementWithText(doc, root, "partialScore", partialScore);
 
 //            TransformerFactory transformerFactory = TransformerFactory.newInstance();
 //            Transformer transformer = transformerFactory.newTransformer();
@@ -346,7 +441,7 @@ public class ParseXMLQuestion {
     }
 
     public static void main(String[] args){
-        Question question = parseFromFile("D:\\LICENTA\\Intrebari_XML\\mediu\\question_1.xml");
+        Question question = parseFromFile("D:\\LICENTA\\Intrebari_XML\\write_xml_java1.xml");
         System.out.println(question);
         ParseXMLQuestion parseXMLQuestion = new ParseXMLQuestion();
 //        parseXMLQuestion.writeToXML(question);

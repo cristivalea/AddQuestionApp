@@ -15,6 +15,7 @@ public class Question {
     protected List<AbstractResponse> responses;
     protected boolean[] answers;
     protected String hint;
+    protected boolean partialScore;
 
     public Question(String idQuestion, Dificulty dificulty, List<Objectiv> mainObjectives, List<Objectiv> secondaryObjectiv, short timeLength,  GuiType guiType, AbstractContent conteent, List<AbstractResponse> responses, boolean[] answers, String hint) {
         this.idQuestion = idQuestion;
@@ -27,12 +28,20 @@ public class Question {
         this.responses = responses;
         this.answers = answers;
         this.hint = hint;
+        setPartialScore(false);
     }
 
     public Question() {
 
     }
 
+    public void setPartialScore(boolean score){
+        this.partialScore = score;
+    }
+
+    public boolean getPartialScore(){
+        return this.partialScore;
+    }
 
     public  String getIdQuestion() {
         return this.idQuestion;
@@ -127,6 +136,7 @@ public class Question {
                 "\nresponses=" + responses +
                 "\nanswers=" + Arrays.toString(answers) +
                 "\nhint='" + hint + '\'' +
+                "\nPartial Score= " + partialScore +
                 '}';
     }
 

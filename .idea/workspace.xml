@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c65b2b84-185b-4a56-9560-3dc939ff3218" name="Changes" comment="Finalizare scriere xml si json">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/ContentTextUpCodeImgTextDown.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ContentTextUpCodeImgTextDownPanel.java" afterDir="false" />
+    <list default="true" id="c65b2b84-185b-4a56-9560-3dc939ff3218" name="Changes" comment="Adauagare tip de intrebare text up code imagine text down">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/GuiType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/GuiType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/ButtonNextScreen2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ButtonNextScreen2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/SecondScreenFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/SecondScreenFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/Question.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/write_file/ParseXMLQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/write_file/ParseXMLQuestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/write_file/WriteJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/write_file/WriteJSON.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +39,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.FirstScreenFrame.executor": "Run",
+    "Application.ParseXMLQuestion.executor": "Run",
     "Application.SecondScreenFrame.executor": "Run",
+    "Application.WriteJSON.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -82,7 +82,7 @@
       <workItem from="1758625540308" duration="599000" />
       <workItem from="1758639358662" duration="2264000" />
       <workItem from="1758696666197" duration="367000" />
-      <workItem from="1758697245892" duration="3554000" />
+      <workItem from="1758697245892" duration="7311000" />
     </task>
     <task id="LOCAL-00001" summary="Primul commit">
       <option name="closed" value="true" />
@@ -220,11 +220,30 @@
       <option name="project" value="LOCAL" />
       <updated>1758625543865</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Adauagare tip de intrebare text up code imagine text down">
+      <option name="closed" value="true" />
+      <created>1758702285403</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1758702285403</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primul commit" />
@@ -238,7 +257,8 @@
     <MESSAGE value="Creare toate functionalitatile de intreoducere a intrebarilor" />
     <MESSAGE value="Finalizare aplicatie de adaugarae a intrebarii" />
     <MESSAGE value="Finalizare scriere xml si json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalizare scriere xml si json" />
+    <MESSAGE value="Adauagare tip de intrebare text up code imagine text down" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adauagare tip de intrebare text up code imagine text down" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
