@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c65b2b84-185b-4a56-9560-3dc939ff3218" name="Changes" comment="Modificare scriere si citire xml si scriere json">
+    <list default="true" id="c65b2b84-185b-4a56-9560-3dc939ff3218" name="Changes" comment="Modificare parsare JSON">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/write_file/WriteJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/write_file/WriteJSON.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/ButtonGenerateQuestionId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ButtonGenerateQuestionId.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +45,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/LICENTA/TestsSecureApiApplication",
+    "last_opened_file_path": "D:/LICENTA/AdminApp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,7 +80,9 @@
       <workItem from="1758625540308" duration="599000" />
       <workItem from="1758639358662" duration="2264000" />
       <workItem from="1758696666197" duration="367000" />
-      <workItem from="1758697245892" duration="8714000" />
+      <workItem from="1758697245892" duration="8898000" />
+      <workItem from="1758787353836" duration="882000" />
+      <workItem from="1759136860542" duration="1641000" />
     </task>
     <task id="LOCAL-00001" summary="Primul commit">
       <option name="closed" value="true" />
@@ -233,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758716384114</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Modificare parsare JSON">
+      <option name="closed" value="true" />
+      <created>1758724220514</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1758724220514</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,17 +275,7 @@
     <MESSAGE value="Finalizare scriere xml si json" />
     <MESSAGE value="Adauagare tip de intrebare text up code imagine text down" />
     <MESSAGE value="Modificare scriere si citire xml si scriere json" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modificare scriere si citire xml si scriere json" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Modificare parsare JSON" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificare parsare JSON" />
   </component>
 </project>

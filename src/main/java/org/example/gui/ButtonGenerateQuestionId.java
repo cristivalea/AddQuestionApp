@@ -1,5 +1,6 @@
 package org.example.gui;
 
+import org.example.Main;
 import org.example.core.Objectiv;
 
 import javax.swing.*;
@@ -63,7 +64,8 @@ public class ButtonGenerateQuestionId extends JButton implements Command {
     }
 
     private String generateIdQuest(List<Objectiv> maibObjList){
-        String id = "Q";
+        String id = Main.getInitiala();
+        id += "Q";
         for(int i = 0; i < 3; i++){
             if(i < maibObjList.size()){
                 id += maibObjList.get(i).getId();
